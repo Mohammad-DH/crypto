@@ -1,0 +1,288 @@
+:root {
+
+    --RSide-background: hsla(239, 100%, 30%, 0.301);
+    --Detaile-background: hsla(215, 94%, 86%, 0.7);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    background: rgb(226, 255, 87);
+    background: linear-gradient(45deg, rgba(226, 255, 87, 1) 0%, rgba(107, 254, 255, 1) 100%);
+}
+
+.main {
+    display: flex;
+}
+
+/** left side **/
+.L-side {
+    width: 20%;
+    background-color: rgb(97, 97, 97);
+    backdrop-filter: blur(500px);
+
+}
+
+.side-bar {
+    position: relative;
+    top: -1%;
+    left: 0;
+    height: 93vh;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+}
+
+/** search bar **/
+.search-box {
+    width: 96%;
+    height: 3vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10vh;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+
+}
+
+.search {
+    width: 95%;
+    height: 3vh;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    margin-left: 2%;
+    overflow: hidden;
+    background-color: transparent;
+    color: white;
+}
+
+/** END search bar **/
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: rgba(172, 172, 172, 0.8);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 1vh;
+    transition: .5s linear;
+    transition-property: order;
+    cursor: pointer;
+}
+
+
+
+.card:last-of-type {
+    margin-bottom: 20px;
+}
+
+.selected {
+    background-color: rgb(63, 62, 62);
+    border: 1px solid rgb(85, 255, 85);
+    animation: selected 5s linear infinite;
+}
+
+
+
+@keyframes selected {
+    0% {
+        border: 1px solid rgb(85, 255, 85);
+    }
+
+    20% {
+        border: 1px solid rgba(85, 255, 85, 0.7);
+    }
+
+    50% {
+        border: 1px solid rgba(85, 255, 85, 0);
+    }
+
+    80% {
+        border: 1px solid rgb(85, 255, 85, 0.7);
+    }
+
+    100% {
+        border: 1px solid rgb(85, 255, 85);
+    }
+}
+
+
+
+
+.sideBarImage {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 100%;
+}
+
+.sideBarName {
+    padding-left: 10px;
+    color: white;
+}
+
+.sideBarPrice {
+    position: absolute;
+    right: 5%;
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+/** END of left side **/
+/** right side **/
+.R-side {
+    width: 80%;
+    background-color: var(--RSide-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time {
+    width: 98%;
+    height: fit-content;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2vh;
+}
+
+.time h3,
+.GMT {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 2vh;
+    font-size: 1.3rem;
+}
+
+.comp {
+    margin-top: 2vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.chart {
+    width: 69%;
+    height: 88vh;
+    background-color: rgba(90, 89, 89, 0.2);
+    border-radius: 2vh;
+    backdrop-filter: blur(200px);
+    box-shadow: rgba(0, 0, 0, 0.192) 2px 8px 8px;
+}
+
+/** Detaile **/
+.detaile {
+    width: 28%;
+    height: 88vh;
+    background-color: var(--Detaile-background);
+    border-radius: 2vh;
+    backdrop-filter: blur(200px);
+    box-shadow: rgba(0, 0, 0, 0.192) 2px 8px 8px;
+
+}
+
+
+.detaile-name {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    border-radius: .5vh;
+    border: 1px solid white;
+    padding: 1vh;
+    background-color: rgb(182, 180, 180);
+    z-index: 3;
+}
+
+.mainDetaile {
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    border: white 1px solid;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 2px 8px 8px;
+}
+
+
+
+.mainDetaile h4 {
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.green {
+    color: rgb(31, 192, 31);
+}
+
+.red {
+    color: rgb(255, 29, 29);
+}
+
+/** END Detaile**/
+.display {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.not-display {
+    display: none;
+}
+
+.toggle {
+    display: none;
+    z-index: 16;
+}
+
+/** chart **/
+.apexcharts-canvas {
+    margin: 0 auto;
+    margin-top: 2%;
+    background-color: rgb(31, 30, 30);
+    border-radius: 2vh;
+    box-shadow: rgba(0, 0, 0, .3) 0px 10px 5px;
+}
+
+
+.apexcharts-text {
+    fill: rgb(255, 255, 255);
+}
+
+.apexcharts-xaxistooltip {
+    display: none;
+}
