@@ -23,7 +23,8 @@ function App() {
         setsearchTerm(i)
     }
 
-    const fetch = () => {
+
+    useEffect(() => {
         setloading(true)
         axios
             .get(
@@ -35,16 +36,7 @@ function App() {
                 setloading(false)
             })
             .catch(error => { console.log(error + '***') });
-    }
-
-
-    /*useEffect(() => {
-       fetch()
-    }, []);*/
-
-    /*setInterval(() => {
-        fetch()
-    }, 60000);*/
+    }, []);
 
     const Filter = (val) => {
 

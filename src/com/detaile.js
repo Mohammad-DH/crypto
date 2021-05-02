@@ -24,18 +24,18 @@ function Detaile(props) {
     }, [props.coins])
 
 
-    /* useEffect(() => {
-         setloading(true)
-         axios
-             .get(
-                 `https://api.coingecko.com/api/v3/coins/${props.show}/market_chart?vs_currency=usd&days=1`
-             )
-             .then(res => {
-                 setchart(res.data);
-                 setloading(false)
-             })
-             .catch(error => { console.log(error + '***') });
-     }, [props.show]);*/
+    useEffect(() => {
+        setloading(true)
+        axios
+            .get(
+                `https://api.coingecko.com/api/v3/coins/${props.show}/market_chart?vs_currency=usd&days=1`
+            )
+            .then(res => {
+                setchart(res.data);
+                setloading(false)
+            })
+            .catch(error => { console.log(error + '***') });
+    }, [props.show]);
 
     return (
         <div className='R-side'>
